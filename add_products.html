@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Products</title>
+</head>
+<body>
+    <div id="sidebar-placeholder"></div>
+
+    <script>
+      fetch("sidebar.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("sidebar-placeholder").innerHTML = data;
+        });
+    </script>
+
+    <div class="main-content">
+      <div class="container-fluid p-5">
+        <h3 class="fw-bold">Product Inventory</h3>
+        <p>Monitor stock levels and product data.</p>
+      </div>
+
+    <div class="row d-flex justify-content-center pb-5">
+    <div class="col-8 border border-dark rounded p-5">
+        <section>
+            <h4 class="fw-bold">Add Products</h4>
+            <form method="post" enctype="multipart/form-data">
+                <hr /><br/>
+
+                <div class="mb-3">
+                    <label for="#" class="form-label">Product ID:</label>
+                    <input type="text" class="form-control" id="#" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="#" class="form-label">Product Name:</label>
+                    <input type="text" class="form-control" id="#" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="#" class="form-label">Description:</label>
+                    <input type="number" class="form-control" id="#" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="#" class="form-label">Price:</label>
+                    <input type="text" class="form-control" id="#" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="#" class="form-label">Category:</label>
+                    <input type="text" class="form-control" id="#" required />
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="w-100 btn btn-dark">Add</button>
+                </div>
+            </form>
+          </section>
+       </div>  
+     </div> 
+    </div>
+</body>
+</html>

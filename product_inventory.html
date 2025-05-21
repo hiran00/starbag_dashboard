@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Inventory</title>
+</head>
+<body>
+  <div id="sidebar-placeholder"></div>
+
+    <script>
+      fetch("sidebar.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("sidebar-placeholder").innerHTML = data;
+        });
+    </script>
+
+    <div class="main-content">
+      <div class="container-fluid p-5">
+        <h3 class="fw-bold">Product Inventory</h3>
+        <p>Monitor stock levels and product data.</p>
+
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-products-tab" data-bs-toggle="tab" href="#nav-products" role="tab" aria-controls="nav-products" aria-selected="true">Products</a>
+          <a class="nav-item nav-link" id="nav-inventory-tab" data-bs-toggle="tab" href="#nav-inventory" role="tab" aria-controls="nav-inventory" aria-selected="false">Inventory</a>
+          <a class="nav-item nav-link" id="nav-pbatches-tab" data-bs-toggle="tab" href="#nav-pbatches" role="tab" aria-controls="nav-pbatches" aria-selected="false">Production Batches</a>
+        </div>
+      </nav>
+
+      <div class="tab-content" id="nav-tabContent">
+        
+        <div class="tab-pane fade show active" id="nav-products" role="tabpanel" aria-labelledby="nav-products-tab">
+          <div class="container px-5">
+              <div class="row">
+                  <div class="col mx-auto">
+                        <h4 class="text-center mb-4 mt-4">Products</h4>
+                        <table class="table table-bordered">
+                          <thead class="table-light">
+                            <tr>
+                              <th scope="col">ProductID</th>
+                              <th scope="col">Product Name</th>
+                              <th scope="col">Description</th>
+                              <th scope="col">Price</th>
+                              <th scope="col">Category</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                              <td>01</td>
+                              <td>Laptop Backpack</td>
+                              <td>Black, 20l, leather backpack</td>
+                              <td>9,400</td>
+                              <td>Backpacks</td>
+                          </tr>
+                          </tbody>
+                        </table>
+                        <div>
+                          <a href="/add_products.html" class="btn btn-success btn-sm">Add Products</a>
+                          <button type="button" class="btn btn-dark btn-sm">
+                            <i class="bi bi-download me-2"></i>Download</button>
+                        </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+        <div class="tab-pane fade" id="nav-inventory" role="tabpanel" aria-labelledby="nav-inventory-tab">
+          <div class="container px-5">
+              <div class="row">
+                  <div class="col mx-auto">
+                        <h4 class="text-center mb-4 mt-4">Inventory</h4>
+                        <table class="table table-bordered">
+                          <thead class="table-light">
+                            <tr>
+                              <th scope="col">ProductID</th>
+                              <th scope="col">Quantity in stock</th>
+                              <th scope="col">Reorder Level</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                              <td>01</td>
+                              <td>98</td>
+                              <td>Low</td>
+                          </tr>
+                          </tbody>
+                        </table>
+                        <div>
+                          <a href="/add_inventory.html" class="btn btn-success btn-sm">Add Inventory</a>
+                          <button type="button" class="btn btn-dark btn-sm">
+                            <i class="bi bi-download me-2"></i>Download</button>
+                        </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+        <div class="tab-pane fade" id="nav-pbatches" role="tabpanel" aria-labelledby="nav-pbatches-tab">
+          
+        <div class="container px-5">
+              <div class="row">
+                  <div class="col mx-auto">
+                        <h4 class="text-center mb-4 mt-4">Production Batches</h4>
+                        <table class="table table-bordered">
+                          <thead class="table-light">
+                            <tr>
+                              <th scope="col">BatchID</th>
+                              <th scope="col">ProductID</th>
+                              <th scope="col">OrderID</th>
+                              <th scope="col">Quantity</th>
+                              <th scope="col">Start Date</th>
+                              <th scope="col">End Date</th>
+                              <th scope="col">Status</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                              <td>01</td>
+                              <td>01</td>
+                              <td>01</td>
+                              <td>200</td>
+                              <td>05/21/2025</td>
+                              <td>07/21/2025</td>
+                              <td>On Going</td>
+                          </tr>
+                          </tbody>
+                        </table>
+                        <div>
+                          <a href="/add_probatches.html" class="btn btn-success btn-sm">Add Batches</a>
+                          <button type="button" class="btn btn-dark btn-sm">
+                            <i class="bi bi-download me-2"></i>Download</button>
+                        </div>
+                  </div>
+                </div>
+              </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

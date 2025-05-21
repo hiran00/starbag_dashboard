@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Management</title>
+</head>
+<body>
+    <div id="sidebar-placeholder"></div>
+
+    <script>
+      fetch("sidebar.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("sidebar-placeholder").innerHTML = data;
+        });
+    </script>
+
+    <div class="main-content">
+      <div class="container-fluid p-5">
+        <h3 class="fw-bold">Customer Management</h3>
+        <p>Manage customer profiles and interactions.</p>
+      </div>
+
+      <div class="container px-5">
+        <div class="row">
+          <div class="col mx-auto">
+                <h4 class="text-center mb-4 mt-2">Corporate Customers</h4>
+                <table class="table table-bordered">
+                  <thead class="table-light">
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Company Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Registered Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      <td>01</td>
+                      <td>ABCD Pvt Limited</td>
+                      <td>abc@gmal.com</td>
+                      <td>011 2244889</td>
+                      <td>52, Pitipana, Homagama</td>
+                      <td>05/20/2025</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <div>
+                   <a href="/add_customers.html" class="btn btn-success btn-sm">Add Customers</a>
+                   <button type="button" class="btn btn-dark btn-sm">
+                    <i class="bi bi-download me-2"></i>Download</button>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</body>
+</html>

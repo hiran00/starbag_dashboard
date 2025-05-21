@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplier Management</title>
+</head>
+<body>
+  <div id="sidebar-placeholder"></div>
+
+    <script>
+      fetch("sidebar.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("sidebar-placeholder").innerHTML = data;
+        });
+    </script>
+
+    <div class="main-content">
+      <div class="container-fluid p-5">
+        <h3 class="fw-bold">Supplier Management</h3>
+        <p>Oversee supplier and materials details.</p>
+
+        <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-sup-tab" data-bs-toggle="tab" href="#nav-sup" role="tab" aria-controls="nav-sup" aria-selected="true">Suppliers</a>
+          <a class="nav-item nav-link" id="nav-mat-tab" data-bs-toggle="tab" href="#nav-mat" role="tab" aria-controls="nav-mat" aria-selected="false">Materials</a>
+          <a class="nav-item nav-link" id="nav-matusage-tab" data-bs-toggle="tab" href="#nav-matusage" role="tab" aria-controls="nav-matusage" aria-selected="false">Material Usage</a>
+        </div>
+      </nav>
+
+      <div class="tab-content" id="nav-tabContent">
+        
+        <div class="tab-pane fade show active" id="nav-sup" role="tabpanel" aria-labelledby="nav-sup-tab">
+          <div class="container px-5">
+              <div class="row">
+                  <div class="col mx-auto">
+                        <h4 class="text-center mb-4 mt-4">Suppliers</h4>
+                        <table class="table table-bordered">
+                          <thead class="table-light">
+                            <tr>
+                              <th scope="col">SID</th>
+                              <th scope="col">Supplier Name</th>
+                              <th scope="col">Email</th>
+                              <th scope="col">Phone</th>
+                              <th scope="col">Address</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                              <td>01</td>
+                              <td>ABCD Pvt Limited</td>
+                              <td>abc@gmal.com</td>
+                              <td>011 2244889</td>
+                              <td>52, Pitipana, Homagama</td>
+                          </tr>
+                          </tbody>
+                        </table>
+                        <div>
+                          <a href="/add_suppliers.html" class="btn btn-success btn-sm">Add Suppliers</a>
+                          <button type="button" class="btn btn-dark btn-sm">
+                            <i class="bi bi-download me-2"></i>Download</button>
+                        </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        
+
+        <div class="tab-pane fade" id="nav-mat" role="tabpanel" aria-labelledby="nav-mat-tab">
+          <div class="container px-5">
+              <div class="row">
+                  <div class="col mx-auto">
+                        <h4 class="text-center mb-4 mt-4">Materials</h4>
+                        <table class="table table-bordered">
+                          <thead class="table-light">
+                            <tr>
+                              <th scope="col">MID</th>
+                              <th scope="col">Material Name</th>
+                              <th scope="col">Unit Cost</th>
+                              <th scope="col">Unit Type</th>
+                              <th scope="col">SID</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                              <td>01</td>
+                              <td>Leather Sheets</td>
+                              <td>LKR 6000.00</td>
+                              <td>20m Sheet</td>
+                              <td>01</td>
+                          </tr>
+                          </tbody>
+                        </table>
+                        <div>
+                          <a href="/add_materials.html" class="btn btn-success btn-sm">Add Materials</a>
+                          <button type="button" class="btn btn-dark btn-sm">
+                            <i class="bi bi-download me-2"></i>Download</button>
+                        </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+        <div class="tab-pane fade" id="nav-matusage" role="tabpanel" aria-labelledby="nav-matusage-tab">
+          
+        <div class="container px-5">
+              <div class="row">
+                  <div class="col mx-auto">
+                        <h4 class="text-center mb-4 mt-4">Material Usage</h4>
+                        <table class="table table-bordered">
+                          <thead class="table-light">
+                            <tr>
+                              <th scope="col">Usage ID</th>
+                              <th scope="col">Batch ID</th>
+                              <th scope="col">MID</th>
+                              <th scope="col">Used Quantity</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                              <td>01</td>
+                              <td>119</td>
+                              <td>01</td>
+                              <td>10m</td>
+                          </tr>
+                          </tbody>
+                        </table>
+                        <div>
+                          <a href="/add_materialusage.html" class="btn btn-success btn-sm">Add Material Usage</a>
+                          <button type="button" class="btn btn-dark btn-sm">
+                            <i class="bi bi-download me-2"></i>Download</button>
+                        </div>
+                  </div>
+                </div>
+              </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
